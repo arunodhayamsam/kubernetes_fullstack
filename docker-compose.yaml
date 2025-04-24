@@ -1,0 +1,22 @@
+services:
+  frontend:
+    depends_on: 
+      - backend
+    build: ./frontend
+    ports:
+      - 3000:3000
+    networks:
+      - mynetwork  
+
+  backend: 
+    build: ./backend
+    ports: 
+      - 8000:8000
+    networks:
+      - mynetwork  
+
+volumes:
+  vidly:
+
+networks:
+  mynetwork:
